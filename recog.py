@@ -2,6 +2,7 @@ from scanners.portscanner import PortScanner
 from scanners.servicescanner import ServiceScanner
 from scanners.vulnscanner import VulnerabilityScanner
 from utils.logger import Logger
+import sys
 
 vulnerabilities = VulnerabilityScanner(
     "https://raw.githubusercontent.com/nfense/vulndb/main/database/{type}/{product}.json")
@@ -16,7 +17,12 @@ logger.print(f"""
 \u001b[31;1m                   /___/  
 """)
 
-target = "play.arkflame.com"
+if len(sys.argv) == 1:
+    logger.critic(
+        "{red}{bold}ERROR {reset}Please use python ./recog.py <target>")
+    exit()
+
+target = sys.argv[1]
 
 logger.debug("---- Start ----")
 logger.debug("Starting scan for target: " + target)
