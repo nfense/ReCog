@@ -40,10 +40,12 @@ class PortScanner:
 
     def scan_ports(self, ports):
         self.reset()
+        self.ports_to_scan = len(ports)
         for port in ports:
             self.scan_port(port)
 
     def scan_ports_async(self, ports):
         self.reset()
+        self.ports_to_scan = len(ports)
         for port in ports:
             self.scan_port_async(port)

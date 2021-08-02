@@ -4,7 +4,7 @@ class SSH:
         self.variables = []
         self.ports = [22]
 
-    def recognition(self, socket):
+    def recognition(self, target, socket):
         socket.send(bytes(
             "SSH-2.0-8.48 FlowSsh: Bitvise SSH Client (Tunnelier) 8.48 - BvSsh", "ascii"))
 

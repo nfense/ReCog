@@ -1,11 +1,13 @@
 from scanners.services.ssh import SSH
+from scanners.services.http import HTTP
 
 
 class ServiceScanner:
     def __init__(self):
         self.variables = []
         self.services = [
-            SSH()
+            SSH(),
+            HTTP()
         ]
 
     def get_modules(self):
