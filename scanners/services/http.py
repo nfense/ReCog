@@ -18,6 +18,6 @@ class HTTP:
                 value = header.split(": ")[1]
 
                 if key == "server":
-                    return value
+                    return value.split(" ")[0].replace("/", "-")
 
         return "unknown"
