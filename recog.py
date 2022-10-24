@@ -71,7 +71,7 @@ def end(services_scanned, _):
 
     logger.debug("--- Summary ---")
     logger.debug("Services scanned: " + str(services_scanned))
-    logger.debug("Vulnerabilities founded: " +
+    logger.debug("Vulnerabilities found: " +
                  str(vulnerabilities.get_founded()))
 
 
